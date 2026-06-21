@@ -1,3 +1,10 @@
+import{
+  saveReview,
+  saveReservation,
+  listenReviews,
+  listenReservations
+} from "./firebase-service.js";
+
 const filterBtns = document.querySelectorAll(".filter-btn");
 const cards = document.querySelectorAll(".card");
 
@@ -62,7 +69,7 @@ const reservationForm = document.getElementById("reservationForm");
 const formMessage = document.getElementById("formMessage");
 const reservationsList = document.getElementById("reservationsList");
 
-let reservations = JSON.parse(localStorage.getItem("reservations")) || [];
+let reservations = [];
 
 function renderReservations() {
   reservationsList.innerHTML = "";
@@ -87,7 +94,7 @@ function renderReservations() {
   });
 }
 
-reservationForm.addEventListener("submit", function(e) {
+reservationForm.addEventListener("submit", async function(e) {
   e.preventDefault();
 
   const name = document.getElementById("clientName").value.trim();
@@ -136,8 +143,7 @@ Personas: ${people}`;
     people
   };
 
-  reservations.unshift(newReservation);
-  localStorage.setItem("reservations", JSON.stringify(reservations));
+  await saveReservation(newReservation);
 
   renderReservations();
 
@@ -200,7 +206,7 @@ counters.forEach((counter) => {
 const reviewForm = document.getElementById("reviewForm");
 const testimonialsGrid = document.getElementById("testimonialsGrid");
 
-let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+let reviews = [];
 
 let currentReviewIndex = 0;
 const reviewsPerPage = 3;
@@ -254,7 +260,7 @@ function renderReviews() {
   });
 }
 
-reviewForm.addEventListener("submit", (e) => {
+reviewForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const name = document.getElementById("reviewName").value.trim();
@@ -269,9 +275,7 @@ reviewForm.addEventListener("submit", (e) => {
     comment
   };
 
-  reviews.unshift(newReview);
-
-  localStorage.setItem("reviews", JSON.stringify(reviews));
+  await saveReview(newReview);
 
   currentReviewIndex = 0;
   renderReviews();
@@ -427,9 +431,6 @@ cancelDeleteBtn.addEventListener("click", function () {
 });
 
 
-renderReservations();
-renderReviews();
-
 const backToTop = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
@@ -449,4 +450,14 @@ backToTop.addEventListener("click", () => {
     behavior: "smooth"
   });
 
+});
+
+listenReviews((data) => {
+  reviews = data;
+  renderReviews();
+});
+
+listenReservations((data) => {
+  reservations = data;
+  renderReservations();
 });
