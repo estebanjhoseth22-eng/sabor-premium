@@ -352,7 +352,7 @@ if (reviews.length === 0) {
       Hora: ${reservation.time}<br>
       Personas: ${reservation.people}<br><br>
 
-      <button class="delete-review-btn" data-id="${review.id}">
+      <button class="delete-reservation-btn" data-id="${reservation.id}">
         Eliminar reserva
       </button>
     `;
@@ -369,7 +369,7 @@ if (reviews.length === 0) {
       ${"★".repeat(review.stars)}<br>
       ${review.comment}<br><br>
 
-      <button class="delete-reservation-btn" data-id="${reservation.id}">
+      <button class="delete-review-btn" data-id="${review.id}">
         Eliminar reseña
       </button>
     `;
