@@ -27,13 +27,13 @@ let itemIdToDelete = null;
 
 checkAuth((user) => {
   if (!user) {
-    window.location.href = "login.html";
+    window.location.href = "admin-login.html";
   }
 });
 
 logoutBtn.addEventListener("click", async () => {
   await logout();
-  window.location.href = "login.html";
+  window.location.href = "admin-login.html";
 });
 
 function updateStats() {
