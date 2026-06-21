@@ -7,7 +7,9 @@ import {
   onSnapshot,
   query,
   orderBy,
-  serverTimestamp
+  serverTimestamp,
+  deleteDoc,
+  doc
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -92,4 +94,12 @@ export function listenReservations(callback) {
 
   });
 
+}
+
+export async function deleteReview(id) {
+  await deleteDoc(doc(db, "reviews", id));
+}
+
+export async function deleteReservation(id) {
+  await deleteDoc(doc(db, "reservations", id));
 }

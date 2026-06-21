@@ -1,8 +1,10 @@
-import{
+import {
   saveReview,
   saveReservation,
   listenReviews,
-  listenReservations
+  listenReservations,
+  deleteReview,
+  deleteReservation
 } from "./firebase-service.js";
 
 const filterBtns = document.querySelectorAll(".filter-btn");
@@ -12,8 +14,8 @@ const confirmModal = document.getElementById("confirmModal");
 const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
 const cancelDeleteBtn = document.getElementById("cancelDeleteBtn");
 
-let reviewIndexToDelete = null;
-let reservationIndexToDelete = null;
+let reviewIdToDelete = null;
+let reservationIdToDelete = null;
 let deleteType = null;
 
 
@@ -350,7 +352,7 @@ if (reviews.length === 0) {
       Hora: ${reservation.time}<br>
       Personas: ${reservation.people}<br><br>
 
-      <button class="delete-reservation-btn" data-index="${index}">
+      <button class="delete-review-btn" data-id="${review.id}">
         Eliminar reserva
       </button>
     `;
@@ -367,7 +369,7 @@ if (reviews.length === 0) {
       ${"★".repeat(review.stars)}<br>
       ${review.comment}<br><br>
 
-      <button class="delete-review-btn" data-index="${index}">
+      <button class="delete-reservation-btn" data-id="${reservation.id}">
         Eliminar reseña
       </button>
     `;
@@ -377,7 +379,7 @@ if (reviews.length === 0) {
 
   document.querySelectorAll(".delete-review-btn").forEach((button) => {
     button.addEventListener("click", function () {
-      reviewIndexToDelete = Number(this.dataset.index);
+      reviewIdToDelete = this.dataset.id;
       deleteType = "review";
 
       confirmModal.classList.add("active");
@@ -386,7 +388,7 @@ if (reviews.length === 0) {
 
   document.querySelectorAll(".delete-reservation-btn").forEach((button) => {
     button.addEventListener("click", function () {
-      reservationIndexToDelete = Number(this.dataset.index);
+      reservationIdToDelete = this.dataset.id;
       deleteType = "reservation";
 
       confirmModal.classList.add("active");
@@ -395,38 +397,27 @@ if (reviews.length === 0) {
 });
 
 
-confirmDeleteBtn.addEventListener("click", function () {
-  if (deleteType === "review") {
-    reviews.splice(reviewIndexToDelete, 1);
-    localStorage.setItem("reviews", JSON.stringify(reviews));
-
-    if (currentReviewIndex >= reviews.length) {
-      currentReviewIndex = 0;
-    }
-
-    renderReviews();
+confirmDeleteBtn.addEventListener("click", async function () {
+  if (deleteType === "review" && reviewIdToDelete) {
+    await deleteReview(reviewIdToDelete);
   }
 
-  if (deleteType === "reservation") {
-    reservations.splice(reservationIndexToDelete, 1);
-    localStorage.setItem("reservations", JSON.stringify(reservations));
-    renderReservations();
+  if (deleteType === "reservation" && reservationIdToDelete) {
+    await deleteReservation(reservationIdToDelete);
   }
 
   confirmModal.classList.remove("active");
 
-  reviewIndexToDelete = null;
-  reservationIndexToDelete = null;
+  reviewIdToDelete = null;
+  reservationIdToDelete = null;
   deleteType = null;
-
-  loginAdmin.click();
 });
 
 cancelDeleteBtn.addEventListener("click", function () {
   confirmModal.classList.remove("active");
 
-  reviewIndexToDelete = null;
-  reservationIndexToDelete = null;
+  reviewIdToDelete = null;
+  reservationIdToDelete = null;
   deleteType = null;
 });
 
