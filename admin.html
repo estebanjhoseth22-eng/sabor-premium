@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Sabor Premium</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="admin-page">
+    <section class="admin-panel active">
+      <div class="admin-content">
+
+        <h2>Panel Administrador</h2>
+
+        <button id="logoutBtn">Cerrar sesión</button>
+
+        <div class="admin-stats">
+          <div class="admin-stat-card">
+            <h3 id="totalReservations">0</h3>
+            <p>Reservas</p>
+          </div>
+
+          <div class="admin-stat-card">
+            <h3 id="totalReviews">0</h3>
+            <p>Reseñas</p>
+          </div>
+
+          <div class="admin-stat-card">
+            <h3 id="averageRating">0.0 ★</h3>
+            <p>Promedio</p>
+          </div>
+        </div>
+
+        <h3>Reservas registradas</h3>
+        <div id="adminReservations"></div>
+
+        <h3>Reseñas registradas</h3>
+        <div id="adminReviews"></div>
+
+      </div>
+    </section>
+  </main>
+
+  <div class="confirm-modal" id="confirmModal">
+    <div class="confirm-box">
+      <h3>Eliminar registro</h3>
+      <p>¿Estás seguro de que deseas eliminar este registro?</p>
+
+      <div class="confirm-actions">
+        <button id="confirmDeleteBtn">Sí, eliminar</button>
+        <button id="cancelDeleteBtn">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
