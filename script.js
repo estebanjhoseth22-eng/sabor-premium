@@ -446,9 +446,17 @@ backToTop.addEventListener("click", () => {
 listenReviews((data) => {
   reviews = data;
   renderReviews();
+
+  if (adminArea.style.display === "block") {
+    loginAdmin.click();
+  }
 });
 
 listenReservations((data) => {
   reservations = data;
   renderReservations();
+
+  if (adminArea.style.display === "block") {
+    loginAdmin.click();
+  }
 });
