@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabor Premium | Restaurante</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="data:,">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <nav class="navbar">
+      <h1 class="logo">Sabor Premium</h1>
+
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <a href="#reservas" class="nav-btn">Reservar</a>
+
+      
+
+      <button class="menu-toggle" id="menuToggle">
+  ☰
+</button>
+
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <span class="tag">Restaurante Gourmet</span>
+        <h2>Una experiencia gastronómica inolvidable</h2>
+        <p>
+          Disfruta platos únicos, ingredientes frescos y un ambiente perfecto
+          para compartir momentos especiales.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#menu" class="btn-primary">Ver menú</a>
+          <a href="#reservas" class="btn-secondary">Reservar mesa</a>
+        </div>
+
+        <div class="hero-stats">
+
+        <div class="stat-box">
+            <h3><span class="counter" data-target="5000">0</span>+</h3>
+                <p>Clientes satisfechos</p>
+        </div>
+
+        <div class="stat-box">
+            <h3><span class="counter" data-target="12">0</span>+</h3>
+                <p>Años de experiencia</p>
+        </div>
+
+        <div class="stat-box">
+            <h3><span class="counter" data-target="50">0</span>+</h3>
+                <p>Platos exclusivos</p>
+        </div>
+
+    </div>
+
+      </div>
+
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Plato principal">
+      </div>
+    </section>
+
+    <section class="featured-section">
+
+  <h2>🔥 Los favoritos de nuestros clientes</h2>
+  <p class="section-text">
+    Los platos más pedidos y mejor valorados de nuestro restaurante.
+  </p>
+
+  <div class="featured-grid">
+
+    <div class="featured-card">
+      <span class="featured-badge">TOP VENTAS</span>
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Pizza" loading="lazy">
+      <h3>Pizza Artesanal</h3>
+      <p>Masa madre, mozzarella premium y salsa especial.</p>
+    </div>
+
+    <div class="featured-card">
+      <span class="featured-badge">TOP VENTAS</span>
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Hamburguesa" loading="lazy">
+      <h3>Hamburguesa Royal</h3>
+      <p>Carne artesanal, cheddar y vegetales frescos.</p>
+    </div>
+
+    <div class="featured-card">
+      <span class="featured-badge">TOP VENTAS</span>
+      <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" alt="Cheesecake" loading="lazy">
+      <h3>Cheesecake Premium</h3>
+      <p>Postre estrella acompañado de frutos rojos.</p>
+    </div>
+
+  </div>
+
+</section>
+
+  <section class="benefits-section">
+
+  <h2>¿Por qué elegirnos?</h2>
+
+  <div class="benefits-grid">
+
+    <div class="benefit-card">
+      <div class="benefit-icon">🥗</div>
+      <h3>Ingredientes Frescos</h3>
+      <p>Seleccionamos productos de alta calidad todos los días.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">👨‍🍳</div>
+      <h3>Chefs Expertos</h3>
+      <p>Profesionales con años de experiencia gastronómica.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">⚡</div>
+      <h3>Atención Rápida</h3>
+      <p>Servicio eficiente sin sacrificar la calidad.</p>
+    </div>
+
+    <div class="benefit-card">
+      <div class="benefit-icon">🏆</div>
+      <h3>Calidad Garantizada</h3>
+      <p>La satisfacción de nuestros clientes es nuestra prioridad.</p>
+    </div>
+
+  </div>
+
+</section>
+
+    <section id="menu" class="section">
+
+  <h2>Nuestro Menú</h2>
+  <p class="section-text">Platos seleccionados para una experiencia especial.</p>
+
+  <div class="menu-filters">
+    <button class="filter-btn active" data-category="all">Todos</button>
+    <button class="filter-btn" data-category="entrada">Entradas</button>
+    <button class="filter-btn" data-category="plato">Platos</button>
+    <button class="filter-btn" data-category="bebida">Bebidas</button>
+    <button class="filter-btn" data-category="postre">Postres</button>
+  </div>
+
+  <div class="menu-grid">
+
+    <div class="card hidden" data-category="entrada">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Ensalada" loading="lazy">
+      <h3>Ensalada Premium</h3>
+      <p>Vegetales frescos y salsa especial.</p>
+      <span>S/ 28.00</span>
+    </div>
+
+    <div class="card hidden" data-category="plato">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Hamburguesa" loading="lazy">
+      <h3>Hamburguesa Royal</h3>
+      <p>Carne artesanal y queso cheddar.</p>
+      <span>S/ 35.00</span>
+    </div>
+
+    <div class="card hidden" data-category="plato">
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Pizza" loading="lazy">
+      <h3>Pizza Artesanal</h3>
+      <p>Masa madre y mozzarella premium.</p>
+      <span>S/ 42.00</span>
+    </div>
+
+    <div class="card hidden" data-category="bebida">
+      <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e" alt="Limonada" loading="lazy">
+      <h3>Limonada Frozen</h3>
+      <p>Preparada al momento.</p>
+      <span>S/ 12.00</span>
+    </div>
+
+    <div class="card hidden" data-category="postre">
+      <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" alt="Postre" loading="lazy">
+      <h3>Cheesecake</h3>
+      <p>Con frutos rojos.</p>
+      <span>S/ 18.00</span>
+    </div>
+
+  </div>
+</section>
+
+    <section class="section gallery-section">
+  <h2>Galería</h2>
+  <p class="section-text">Mira algunos de nuestros platos y ambientes.</p>
+
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Pizza" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Hamburguesa" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Ensalada" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e" alt="Bebida" loading="lazy">
+  </div>
+</section>
+
+    <section class="section testimonials-section" id="testimonios">
+  <h2>Lo que dicen nuestros clientes</h2>
+  <p class="section-text">Reseñas reales de quienes ya nos visitaron.</p>
+
+        <div class="rating-summary" id="ratingSummary">
+  <h3>0.0 ★★★★★</h3>
+  <p>Basado en 0 reseñas</p>
+        </div>
+
+  <div class="review-form-container">
+    <h3>Deja tu reseña</h3>
+
+    <form id="reviewForm" class="review-form">
+      <input type="text" id="reviewName" placeholder="Tu nombre" required>
+
+      <input type="email" id="reviewEmail" placeholder="Tu Gmail" required>
+
+      <select id="reviewStars" required>
+        <option value="">Selecciona estrellas</option>
+        <option value="5">★★★★★ - Excelente</option>
+        <option value="4">★★★★ - Muy bueno</option>
+        <option value="3">★★★ - Bueno</option>
+        <option value="2">★★ - Regular</option>
+        <option value="1">★ - Malo</option>
+      </select>
+
+      <textarea id="reviewComment" placeholder="Escribe tu comentario" required></textarea>
+
+      <button type="submit">Publicar reseña</button>
+    </form>
+  </div>
+
+  <div class="testimonials-grid" id="testimonialsGrid">
+  </div>
+</section>
+
+    <section id="reservas" class="reservation-form-section">
+
+  <div class="reservation-info">
+    <span class="tag">Reservas online</span>
+    <h2>Reserva tu mesa en segundos</h2>
+    <p>
+      Completa tus datos y confirma tu reserva directamente por WhatsApp.
+    </p>
+  </div>
+
+  <form class="reservation-form" id="reservationForm">
+
+    <div class="form-group">
+      <label for="clientName">Nombre</label>
+      <input type="text" id="clientName" placeholder="Ej: Esteban" required>
+    </div>
+
+    <div class="form-group">
+      <label for="reservationDate">Fecha</label>
+      <input type="date" id="reservationDate" required>
+    </div>
+
+    <div class="form-group">
+      <label for="reservationTime">Hora</label>
+      <input type="time" id="reservationTime" required>
+    </div>
+
+    <div class="form-group">
+      <label for="peopleCount">Personas</label>
+      <input type="number" id="peopleCount" min="1" max="20" placeholder="Ej: 4" required>
+    </div>
+
+    <button type="submit" class="submit-reservation">
+      Reservar por WhatsApp
+    </button>
+
+    <p id="formMessage"></p>
+
+    <div class="reservations-history">
+  <h3>Últimas reservas</h3>
+  <div id="reservationsList"></div>
+</div>
+
+  </form>
+
+</section>
+
+<!-- PARA PODER CAMBIAR LA UBICACION -->
+
+    <section id="contacto" class="section contact">
+  <h2>Visítanos</h2>
+  <p>Av. Principal 123, Trujillo, Perú</p>
+  <p>Lunes a domingo: 12:00 p.m. - 11:00 p.m.</p>
+
+  <div class="map-container">
+    <iframe
+      title="Mapa de ubicación"
+      src="https://www.google.com/maps?q=Trujillo%20Per%C3%BA&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+  </main>
+
+  <section class="admin-panel" id="adminPanel">
+  <div class="admin-content">
+
+    <h2>Panel Administrador</h2>
+
+    <input
+      type="password"
+      id="adminPassword"
+      placeholder="Ingrese contraseña"
+    >
+
+    <button id="loginAdmin">
+      Ingresar
+    </button>
+
+    <div id="adminArea" style="display:none;">
+
+      <h3>Reservas registradas</h3>
+      <div id="adminReservations"></div>
+
+      <h3>Reseñas registradas</h3>
+      <div id="adminReviews"></div>
+
+    </div>
+
+    <div class="admin-stats">
+
+  <div class="admin-stat-card">
+    <h3 id="totalReservations">0</h3>
+    <p>Reservas</p>
+  </div>
+
+  <div class="admin-stat-card">
+    <h3 id="totalReviews">0</h3>
+    <p>Reseñas</p>
+  </div>
+
+  <div class="admin-stat-card">
+    <h3 id="averageRating">0.0 ★</h3>
+    <p>Promedio</p>
+  </div>
+
+</div>
+
+  </div>
+</section>
+
+ <footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h3>Sabor Premium</h3>
+      <p>
+        Experiencias gastronómicas únicas con ingredientes frescos y atención de primer nivel.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Contacto</h3>
+      <p>📍 Av. Principal 123, Trujillo</p>
+      <p>📞 +51 934 633 170</p>
+      <p>✉ contacto@saborpremium.com</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Horarios</h3>
+      <p>Lunes - Viernes</p>
+      <p>12:00 PM - 11:00 PM</p>
+      <p>Sábados y Domingos</p>
+      <p>12:00 PM - 12:00 AM</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Síguenos</h3>
+      <p>📸 Instagram</p>
+      <p>📘 Facebook</p>
+      <p>🎵 TikTok</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Sabor Premium. Todos los derechos reservados.
+  </div>
+
+</footer>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImage" src="" alt="">
+</div>
+
+     <div class="confirm-modal" id="confirmModal">
+  <div class="confirm-box">
+    <h3>Eliminar reseña</h3>
+    <p>¿Estás seguro de que deseas eliminar esta reseña?</p>
+
+    <div class="confirm-actions">
+      <button id="confirmDeleteBtn">Sí, eliminar</button>
+      <button id="cancelDeleteBtn">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+  <!--BOTON DE WHATSAPP-->
+
+  <a
+    href="https://wa.me/51934633170?text=Hola,%20quiero%20más%20información"
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener">
+
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/220/220236.png"
+      alt="WhatsApp">
+
+  </a>
+
+  <button class="back-to-top" id="backToTop">
+    ↑
+  </button>
+
+  <script src="script.js"></script>
+
+    <div id="toast" class="toast">
+        ✓ Reseña publicada correctamente
+    </div>
+
+
+</body>
+</html>
